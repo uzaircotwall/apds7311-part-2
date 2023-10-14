@@ -1,0 +1,55 @@
+###  CREATE USER
+POST https://localhost:3000/api/users/signup HTTP/1.1
+content-type: application/json
+
+{
+    "username":"usertest1",
+    "password":"password2",
+}
+
+// Sending a POST request to create a new user.
+// The request body contains the username and password of the user to be created.
+
+###  LOGIN
+POST https://localhost:3000/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "username":"usertest1",
+    "password":"password2"
+}
+
+// Sending a POST request to authenticate and log in a user.
+// The request body contains the username and password for authentication.
+
+###  POST a POST 
+POST https://localhost:3000/api/posts HTTP/1.1
+content-type: application/json
+Authorization: Bearer <your_access_token>
+
+{
+    "postid": "MM01",
+    "postname": "Board meeting",
+    "postCategory": "Management",
+    "postDescription":"Ensure that the keypads to the board room accommodate for the updated keycards"
+}
+
+// Sending a POST request to create a new post.
+// The request body contains post details including postid, postname, postCategory, and postDescription.
+// The request is authenticated using a bearer token provided in the Authorization header.
+
+### //DELETES POST        (replace 651aca61a720e7e49e504ae6 with the generated _id after post is added)
+DELETE https://localhost:3000/api/posts/651d89590b5dc74f070459d6 HTTP/1.1
+content-type: application/json
+Authorization: Bearer <your_access_token>
+
+// Sending a DELETE request to delete a specific post using its _id.
+// The request is authenticated using a bearer token provided in the Authorization header.
+
+###  GET POSTS
+GET https://localhost:3000/api/posts HTTP/1.1
+content-type: application/json 
+Authorization: Bearer <your_access_token>
+
+// Sending a GET request to retrieve all posts.
+// The request is authenticated using a bearer token provided in the Authorization header.
